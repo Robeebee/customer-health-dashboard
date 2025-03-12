@@ -1,0 +1,831 @@
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>潮汕办详情</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>潮汕办 - 客户详情</h3>
+        <input type="text" id="searchClient" placeholder="搜索订购商" onkeyup="filterTable()">
+        <input type="text" id="searchSalesman" placeholder="搜索业务员" onkeyup="filterTable()">
+        <button onclick="exportTableToCSV('潮汕办_details.csv')">导出数据</button>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>订购商</th>
+                    <th>客户分类</th>
+                    <th>部门</th>
+                    <th>业务员</th>
+                    <th>最后交易时间</th>
+                    <th>最后交易时间间隔</th>
+                    <th>上月吨数</th>
+                    <th>本年吨数</th>
+                    <th>去年吨数</th>
+                    <th>近期采购品种</th>
+                    <th>采购最多品种</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td>李雪利</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-29</td>
+                <td>73天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>11.1吨</td>
+                <td>"全棉针织高配40支, 全棉针织精梳紧密40支, 全棉针织精梳32支"</td>
+                <td>"全棉针织精梳32支"</td>
+            </tr>
+        
+            <tr>
+                <td>庄育雄</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-16</td>
+                <td>86天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>19.7吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈炎生（宇盛纺织）</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-18</td>
+                <td>53天</td>
+                <td>0.0吨</td>
+                <td>12.1吨</td>
+                <td>60.8吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>汕头市丹洋纺织有限公司</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-09-27</td>
+                <td>166天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>352.7吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织普梳高配紧密40支, 全棉针织普梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>两英王新华</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-16</td>
+                <td>55天</td>
+                <td>0.0吨</td>
+                <td>38.1吨</td>
+                <td>61.7吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织普梳紧密32支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈楚鑫</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-28</td>
+                <td>74天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>174.8吨</td>
+                <td>"粘胶纱40支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳40支"</td>
+            </tr>
+        
+            <tr>
+                <td>李贵荣</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-11-03</td>
+                <td>129天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>37.0吨</td>
+                <td>"全棉针织高配紧密26支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>汕头市西华纺织有限公司</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2025-01-06</td>
+                <td>65天</td>
+                <td>0.0吨</td>
+                <td>-25.9吨</td>
+                <td>849.2吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织高配40支, 全棉针织高配32支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>汕头隆鑫纺织有限公司</td>
+                <td>忠实客户</td>
+                <td>本部棉纱部</td>
+                <td>洪文革</td>
+                <td>2024-10-17</td>
+                <td>146天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>24.0吨</td>
+                <td>"全棉针织精梳紧密26支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>汕头兴发针织有限公司</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-11-13</td>
+                <td>119天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>99.9吨</td>
+                <td>"全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>黄育光（龙正）</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-20</td>
+                <td>82天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>201.5吨</td>
+                <td>"全棉针织高配40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>富兴纺织（陈明川）</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-02-09</td>
+                <td>31天</td>
+                <td>2.0吨</td>
+                <td>5.0吨</td>
+                <td>7.9吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>王伟杰</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-11-30</td>
+                <td>102天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>75.1吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织高配40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>卓佳烽</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-09-21</td>
+                <td>172天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.9吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>张衍波</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-22</td>
+                <td>80天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.7吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳40支, 全棉针织精梳26支"</td>
+                <td>"全棉针织高配紧密26支"</td>
+            </tr>
+        
+            <tr>
+                <td>赵华生</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-26</td>
+                <td>76天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>179.0吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>郭文勇</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-10-04</td>
+                <td>159天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>11.3吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳紧密32支, 全棉针织精梳紧密26支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>大鑫纺织</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-10-17</td>
+                <td>146天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>12.0吨</td>
+                <td>"全棉针织普梳紧密32支, 全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>时业(东欣)</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-11-11</td>
+                <td>121天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>209.8吨</td>
+                <td>"全棉针织普梳高配紧密40支, 全棉针织普梳20支包漂白, 全棉针织高配紧密26支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>鼎翔织造</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2025-01-06</td>
+                <td>65天</td>
+                <td>0.0吨</td>
+                <td>10.0吨</td>
+                <td>5.0吨</td>
+                <td>"全棉针织高配40支, 全棉针织高配26支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>东诚织造</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2025-01-16</td>
+                <td>55天</td>
+                <td>0.0吨</td>
+                <td>18.1吨</td>
+                <td>789.0吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>深圳市苏吉思服饰有限公司</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-10-21</td>
+                <td>142天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>13.9吨</td>
+                <td>"全棉针织精梳紧密32支, 全棉针织精梳紧密26支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>杜城织造</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-12-15</td>
+                <td>87天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>70.4吨</td>
+                <td>"全棉针织高配40支, 全棉针织普梳高配紧密40支, 全棉针织精梳紧密40支, 粘胶纱40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>格凯（制衣）实业有限公司</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-11-19</td>
+                <td>113天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>96.4吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>普宁长泰</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-09-14</td>
+                <td>179天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>82.3吨</td>
+                <td>"全棉针织普梳20支包漂白, 全棉针织普梳26支包漂白"</td>
+                <td>"全棉针织普梳26支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>于凤纺织</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2025-01-03</td>
+                <td>68天</td>
+                <td>0.0吨</td>
+                <td>7.0吨</td>
+                <td>10.0吨</td>
+                <td>"全棉针织普梳高配紧密40支, 全棉针织高配40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>宏信达织造</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-09-30</td>
+                <td>163天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>63.4吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>庄儒锋</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-09-20</td>
+                <td>173天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>38.6吨</td>
+                <td>"全棉针织精梳紧密32支, 全棉针织普梳紧密32支"</td>
+                <td>"粘胶纱40支"</td>
+            </tr>
+        
+            <tr>
+                <td>滨诚纺织</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-10-29</td>
+                <td>134天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>23.9吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织高配40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>晨晖布业</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-09-28</td>
+                <td>165天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>32.3吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>象牙盾</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-10-20</td>
+                <td>143天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>146.7吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳紧密32支, 涤纶混纺RT70/30"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>中宝</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-17</td>
+                <td>54天</td>
+                <td>0.0吨</td>
+                <td>12.4吨</td>
+                <td>120.9吨</td>
+                <td>"全棉针织高配40支, 全棉针织普梳紧密32支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>联盈布业</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-11-08</td>
+                <td>124天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>43.0吨</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>盛扬纺织</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办代理</td>
+                <td>陈少豪</td>
+                <td>2025-01-10</td>
+                <td>61天</td>
+                <td>0.0吨</td>
+                <td>5.0吨</td>
+                <td>8.2吨</td>
+                <td>"粘胶纱40支"</td>
+                <td>"粘胶纱40支"</td>
+            </tr>
+        
+            <tr>
+                <td>枫林纺织</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-12-25</td>
+                <td>77天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>37.3吨</td>
+                <td>"粘胶纱40支, 全棉针织高配40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈特扬织造</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2025-01-17</td>
+                <td>54天</td>
+                <td>0.0吨</td>
+                <td>5.8吨</td>
+                <td>25.0吨</td>
+                <td>"全棉针织高配40支, 全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>旺佳布业</td>
+                <td>忠实客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-11-07</td>
+                <td>125天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>13.6吨</td>
+                <td>"全棉针织普梳紧密32支, 全棉针织精梳紧密40支, 全棉针织高配32支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>黄旭健</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-09-20</td>
+                <td>173天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>3.0吨</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>哩哩美</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-10-09</td>
+                <td>154天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>鸿盛</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-10-11</td>
+                <td>152天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>26.0吨</td>
+                <td>"粘胶纱40支"</td>
+                <td>"粘胶纱40支"</td>
+            </tr>
+        
+            <tr>
+                <td>康雅纺织</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-10-30</td>
+                <td>133天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>12.2吨</td>
+                <td>"全棉针织高配32支, 全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织高配32支"</td>
+            </tr>
+        
+            <tr>
+                <td>庄楚鹏</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-05</td>
+                <td>97天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>61.6吨</td>
+                <td>"全棉针织普梳紧密20支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈泽宏</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-04</td>
+                <td>98天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>14.5吨</td>
+                <td>"全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>汇腾纺织</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-11-06</td>
+                <td>126天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>5.0吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>吴汉如</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-02</td>
+                <td>69天</td>
+                <td>0.0吨</td>
+                <td>5.9吨</td>
+                <td>17.1吨</td>
+                <td>"全棉针织精梳紧密40支, 全棉针织精梳紧密32支"</td>
+                <td>"全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈荣宣</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-17</td>
+                <td>85天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>4.0吨</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>陈亮洲布业</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2024-12-18</td>
+                <td>84天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>15.2吨</td>
+                <td>"全棉针织高配40支, 全棉针织普梳高配紧密40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>东浩织造</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>张赐锋</td>
+                <td>2025-01-09</td>
+                <td>62天</td>
+                <td>0.0吨</td>
+                <td>10.6吨</td>
+                <td>9.1吨</td>
+                <td>"全棉针织高配40支"</td>
+                <td>"全棉针织高配40支"</td>
+            </tr>
+        
+            <tr>
+                <td>新意</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>洪文革</td>
+                <td>2024-12-26</td>
+                <td>76天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>2.4吨</td>
+                <td>"全棉针织精梳紧密40支"</td>
+                <td>"全棉针织精梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>任洪涛</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2024-12-27</td>
+                <td>75天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.0吨</td>
+                <td>"粘胶纱40支"</td>
+                <td>"粘胶纱40支"</td>
+            </tr>
+        
+            <tr>
+                <td>佰龙实业</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-10</td>
+                <td>61天</td>
+                <td>0.0吨</td>
+                <td>10.7吨</td>
+                <td>0.0吨</td>
+                <td>"全棉针织普梳紧密32支"</td>
+                <td>"全棉针织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>艺泰</td>
+                <td>冲击头部客户</td>
+                <td>潮汕办</td>
+                <td>陈少豪</td>
+                <td>2025-01-10</td>
+                <td>61天</td>
+                <td>0.0吨</td>
+                <td>15.6吨</td>
+                <td>0.0吨</td>
+                <td>"全棉针织普梳紧密32支"</td>
+                <td>"全棉针织普梳紧密32支"</td>
+            </tr>
+        
+            </tbody>
+        </table>
+        <script>
+            function filterTable() {
+                var clientInput = document.getElementById("searchClient").value.toLowerCase();
+                var salesmanInput = document.getElementById("searchSalesman").value.toLowerCase();
+                var table = document.getElementById("data-table");
+                var tr = table.getElementsByTagName("tr");
+
+                for (var i = 1; i < tr.length; i++) {
+                    var tdClient = tr[i].getElementsByTagName("td")[0];
+                    var tdSalesman = tr[i].getElementsByTagName("td")[3];
+                    if (tdClient && tdSalesman) {
+                        var clientText = tdClient.textContent || tdClient.innerText;
+                        var salesmanText = tdSalesman.textContent || tdSalesman.innerText;
+                        if (clientText.toLowerCase().indexOf(clientInput) > -1 && 
+                            salesmanText.toLowerCase().indexOf(salesmanInput) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }       
+                }
+            }
+
+            function downloadCSV(csv, filename) {
+                var csvFile;
+                var downloadLink;
+
+                csvFile = new Blob([csv], {type: "text/csv"});
+                downloadLink = document.createElement("a");
+                downloadLink.download = filename;
+                downloadLink.href = window.URL.createObjectURL(csvFile);
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+            }
+
+            function exportTableToCSV(filename) {
+                var csv = [];
+                var rows = document.querySelectorAll("table tr");
+
+                for (var i = 0; i < rows.length; i++) {
+                    var row = [], cols = rows[i].querySelectorAll("td, th");
+
+                    for (var j = 0; j < cols.length; j++) {
+                        var cellText = cols[j].innerText;
+                        cellText = '"' + cellText.replace(/"/g, '""') + '"';
+                        row.push(cellText);
+                    }
+
+                    csv.push(row.join(","));
+                }
+
+                downloadCSV(csv.join("\n"), filename);
+            }
+        </script>
+    </body>
+    </html>
+    
